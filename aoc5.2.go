@@ -8,14 +8,10 @@ import (
 	"strconv"
 )
 
-func Reverse(input []string) []string {
-    var output []string
-
-    for i := len(input) - 1; i >= 0; i-- {
-        output = append(output, input[i])
-    }
-
-    return output
+func Dup[T any](src []T) []T {
+    dup := make([]T, len(src))
+    copy(dup, src)
+    return dup
 }
 
 func main() {
@@ -44,7 +40,7 @@ func main() {
 		to, _ := strconv.Atoi(move_match[3])
 		from -= 1
 		to -= 1
-		stacks[to] = append(Reverse(stacks[from][:cnt]), stacks[to]...)
+		stacks[to] = append(Dup(stacks[from][:cnt]), stacks[to]...)
 		stacks[from] = stacks[from][cnt:]
 	}
   }
