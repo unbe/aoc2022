@@ -34,6 +34,5 @@ fn main() -> io::Result<()> {
       }
     }
     dbg!(result);
-
     Ok(())
 }
