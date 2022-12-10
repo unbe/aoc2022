@@ -33,7 +33,6 @@ fn main() -> io::Result<()> {
         timeline.push((counter, x))
       }
     }
-    dbg!(result);
 
     Ok(())
 }
