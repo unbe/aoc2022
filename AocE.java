@@ -67,7 +67,6 @@ public class AocD {
 		if (dropSide != 0) {
 			return dropSide;
 		}
-
 		place(new Point(sand.x, land - 1));
 		return 1;
 	}
