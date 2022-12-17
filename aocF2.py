@@ -39,3 +39,4 @@ for x in range(4000001):
         if segs[i][1] < 4000000:
             print(x, segs)
             print(x + 4000000 * (segs[i][1]+1))
+
