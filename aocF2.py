@@ -11,14 +11,14 @@ with open("input.txt", "r") as f:
             if row > 4000000:
                 break
             remaining = dst - approach
-            seg = [sx - remaining, sx + remaining]
+            seg = (sx - remaining, sx + remaining)
             row_segs[row].append(seg)
         for approach in range(dst):
             row = sy - approach
             if row < 0:
                 break
             remaining = dst - approach
-            seg = [sx - remaining, sx + remaining]
+            seg = (sx - remaining, sx + remaining)
             row_segs[row].append(seg)
 
 print('Processing')
@@ -30,7 +30,7 @@ for x in range(4000001):
         if segs[i][1] < segs[i+1][0]:
             i += 1
             continue
-        segs[i][1] = max(segs[i][1], segs[i+1][1])
+        segs[i] = (segs[i][0], max(segs[i][1], segs[i+1][1]))
         segs.pop(i+1)
     for i in range(len(segs)):
         if segs[i][0] > 0:
